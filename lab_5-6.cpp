@@ -13,7 +13,7 @@ class Vehicle {
 
 public:
 
-	// конструктор без параметров
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 	Vehicle() {
 		this->costVehicle = 0;
 		this->typeVehicle = 0;
@@ -22,7 +22,7 @@ public:
 		this->fuelPerKM = 0;
 	}
 
-	// конструктор с параметрами
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Vehicle(double costVehicle, int typeVehicle, string owner, double costFuel, double fuelPerKM) {
 		this->costVehicle = costVehicle;
 		this->typeVehicle = typeVehicle;
@@ -31,7 +31,7 @@ public:
 		this->fuelPerKM = fuelPerKM;
 	}
 
-	// конструктор копирования
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	Vehicle(const Vehicle& other) {
 		this->costVehicle = other.costVehicle;
 		this->typeVehicle = other.typeVehicle;
@@ -42,7 +42,7 @@ public:
 
 
 
-	// перегрузка = 
+	// РїРµСЂРµРіСЂСѓР·РєР° = 
 	Vehicle & operator = (const Vehicle& other) {
 		this->costVehicle = other.costVehicle;
 		this->typeVehicle = other.typeVehicle;
@@ -54,77 +54,77 @@ public:
 
 
 
-	// геттер для стоимости ТП (1 функция)
+	// РіРµС‚С‚РµСЂ РґР»СЏ СЃС‚РѕРёРјРѕСЃС‚Рё РўРџ (1 С„СѓРЅРєС†РёСЏ)
 	double GetCostVehicle() const {
 		return costVehicle;
 	}
 
-	// геттер для типа ТП (2 функция)
+	// РіРµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РўРџ (2 С„СѓРЅРєС†РёСЏ)
 	int GetTypeVehicle() {
 		return typeVehicle;
 	}
 
-	// геттер для обладателя
+	// РіРµС‚С‚РµСЂ РґР»СЏ РѕР±Р»Р°РґР°С‚РµР»СЏ
 	string GetOwner() {
 		return owner;
 	}
 
-	// геттер для цены топлива
+	// РіРµС‚С‚РµСЂ РґР»СЏ С†РµРЅС‹ С‚РѕРїР»РёРІР°
 	double GetCostFuel() {
 		return costFuel;
 	}
 
-	// геттер для расхода топлива на Км
+	// РіРµС‚С‚РµСЂ РґР»СЏ СЂР°СЃС…РѕРґР° С‚РѕРїР»РёРІР° РЅР° РљРј
 	double GetFuelPerKM() {
 		return fuelPerKM;
 	}
 
 
 
-	// сеттер для стоимости ТП
+	// СЃРµС‚С‚РµСЂ РґР»СЏ СЃС‚РѕРёРјРѕСЃС‚Рё РўРџ
 	void SetCostVehicle(double cost) {
 		costVehicle = cost;
 	}
 
-	// сеттер для типа ТП
+	// СЃРµС‚С‚РµСЂ РґР»СЏ С‚РёРїР° РўРџ
 	void SetTypeVehicle(int type) {
 		typeVehicle = type;
 	}
 
-	// сеттер для обладателя
+	// СЃРµС‚С‚РµСЂ РґР»СЏ РѕР±Р»Р°РґР°С‚РµР»СЏ
 	void SetOwner(string name) {
 		owner = name;
 	}
 
-	// сеттер для цены топлива
+	// СЃРµС‚С‚РµСЂ РґР»СЏ С†РµРЅС‹ С‚РѕРїР»РёРІР°
 	void SetCostFuel(double cost) {
 		costFuel = cost;
 	}
 
-	// сеттер для расхода топлива на км
+	// СЃРµС‚С‚РµСЂ РґР»СЏ СЂР°СЃС…РѕРґР° С‚РѕРїР»РёРІР° РЅР° РєРј
 	void SetFuelPerKM(double fuel) {
 		fuelPerKM = fuel;
 	}
  
 
 
-	// деструктор, в котором хз что удалять
+	// РґРµСЃС‚СЂСѓРєС‚РѕСЂ, РІ РєРѕС‚РѕСЂРѕРј С…Р· С‡С‚Рѕ СѓРґР°Р»СЏС‚СЊ
 	~Vehicle() {}
 
 };
 
 
-// кол-во ТП дешевле чем n
+// РєРѕР»-РІРѕ РўРџ РґРµС€РµРІР»Рµ С‡РµРј n
 void cheaperThanN(Vehicle* array, int arraySize, double n) {
 	int temp = 0;
 	for (int i = 0; i < arraySize; i++) {
 		if (array[i].GetCostVehicle() < n) temp++;
 	}
-	cout << temp << " транспортных средств стоят дешевле " << n << ".";
+	cout << temp << " С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ СЃС‚РѕСЏС‚ РґРµС€РµРІР»Рµ " << n << ".";
 }
 
 
-// процентное соотношение ТП
+// РїСЂРѕС†РµРЅС‚РЅРѕРµ СЃРѕРѕС‚РЅРѕС€РµРЅРёРµ РўРџ
 void percentage(Vehicle* array, int arraySize) {
 	double a, b, c, d;
 	a = b = c = d = 0;
@@ -134,34 +134,34 @@ void percentage(Vehicle* array, int arraySize) {
 		else if (array[i].GetTypeVehicle() == 3) c++;
 		else if (array[i].GetTypeVehicle() == 4) d++;
 	}
-	cout << a / arraySize * 100 << " % ТП 1 типа было представлено от общего кол-ва ТП." << endl;
-	cout << b / arraySize * 100 << " % ТП 2 типа было представлено от общего кол-ва ТП." << endl;
-	cout << c / arraySize * 100 << " % ТП 3 типа было представлено от общего кол-ва ТП." << endl;
-	cout << d / arraySize * 100 << " % ТП 4 типа было представлено от общего кол-ва ТП." << endl;
+	cout << a / arraySize * 100 << " % РўРџ 1 С‚РёРїР° Р±С‹Р»Рѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРѕ РѕС‚ РѕР±С‰РµРіРѕ РєРѕР»-РІР° РўРџ." << endl;
+	cout << b / arraySize * 100 << " % РўРџ 2 С‚РёРїР° Р±С‹Р»Рѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРѕ РѕС‚ РѕР±С‰РµРіРѕ РєРѕР»-РІР° РўРџ." << endl;
+	cout << c / arraySize * 100 << " % РўРџ 3 С‚РёРїР° Р±С‹Р»Рѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРѕ РѕС‚ РѕР±С‰РµРіРѕ РєРѕР»-РІР° РўРџ." << endl;
+	cout << d / arraySize * 100 << " % РўРџ 4 С‚РёРїР° Р±С‹Р»Рѕ РїСЂРµРґСЃС‚Р°РІР»РµРЅРѕ РѕС‚ РѕР±С‰РµРіРѕ РєРѕР»-РІР° РўРџ." << endl;
 }
 
 
-// список ТП для конкретного обладателя
+// СЃРїРёСЃРѕРє РўРџ РґР»СЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РѕР±Р»Р°РґР°С‚РµР»СЏ
 void listOfVelicles(Vehicle* array, int arraySize, string name) {
 	bool flag = false;
 	int temp = 1;
 	for (int i = 0; i < arraySize; i++) {
 		if (array[i].GetOwner() == name) {
-			cout << "Информация по " << temp << "-ому транспортному средству:" << endl;
-			cout << "Стоимость: " << array[i].GetCostVehicle() << endl;
-			cout << "Тип транспортного средства: " << array[i].GetTypeVehicle() << endl;
-			cout << "Цена топлива: " << array[i].GetCostFuel() << endl;
-			cout << "Расход на КМ: " << array[i].GetFuelPerKM() << endl;
+			cout << "РРЅС„РѕСЂРјР°С†РёСЏ РїРѕ " << temp << "-РѕРјСѓ С‚СЂР°РЅСЃРїРѕСЂС‚РЅРѕРјСѓ СЃСЂРµРґСЃС‚РІСѓ:" << endl;
+			cout << "РЎС‚РѕРёРјРѕСЃС‚СЊ: " << array[i].GetCostVehicle() << endl;
+			cout << "РўРёРї С‚СЂР°РЅСЃРїРѕСЂС‚РЅРѕРіРѕ СЃСЂРµРґСЃС‚РІР°: " << array[i].GetTypeVehicle() << endl;
+			cout << "Р¦РµРЅР° С‚РѕРїР»РёРІР°: " << array[i].GetCostFuel() << endl;
+			cout << "Р Р°СЃС…РѕРґ РЅР° РљРњ: " << array[i].GetFuelPerKM() << endl;
 			cout << endl;
 			temp++;
 			flag = true;
 		}
 	}
 	if (flag == false) {
-		cout << "У данной персоны нет транспортных средств." << endl;
+		cout << "РЈ РґР°РЅРЅРѕР№ РїРµСЂСЃРѕРЅС‹ РЅРµС‚ С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ." << endl;
 	}
 	else {
-		cout << "Всего у данной персоны " << temp - 1 << " транспортных средств." << endl;
+		cout << "Р’СЃРµРіРѕ Сѓ РґР°РЅРЅРѕР№ РїРµСЂСЃРѕРЅС‹ " << temp - 1 << " С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ." << endl;
 	}
 }
 
@@ -169,13 +169,13 @@ void listOfVelicles(Vehicle* array, int arraySize, string name) {
 int main() {
 
 	setlocale(LC_ALL, "ru");
-	cout << "Введите кол-во рассматриваемых транспортных средств: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЂР°СЃСЃРјР°С‚СЂРёРІР°РµРјС‹С… С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ: ";
 	int temp;
 	cin >> temp;
 	cout << endl;
 	Vehicle * arrayVehicle = new Vehicle [temp];
 
-	// куча декоративных штук вместе с считыванием данных из консоли
+	// РєСѓС‡Р° РґРµРєРѕСЂР°С‚РёРІРЅС‹С… С€С‚СѓРє РІРјРµСЃС‚Рµ СЃ СЃС‡РёС‚С‹РІР°РЅРёРµРј РґР°РЅРЅС‹С… РёР· РєРѕРЅСЃРѕР»Рё
 	for (int i = 0; i < temp; i++) {
 
 		double costVehicle;
@@ -184,21 +184,21 @@ int main() {
 		double costFuel;
 		double fuelPerKM;
 
-		cout << "Введите данные по транспортному средству под номером " << i + 1 << ":" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РїРѕ С‚СЂР°РЅСЃРїРѕСЂС‚РЅРѕРјСѓ СЃСЂРµРґСЃС‚РІСѓ РїРѕРґ РЅРѕРјРµСЂРѕРј " << i + 1 << ":" << endl;
 
-		cout << "Стоимость: ";
+		cout << "РЎС‚РѕРёРјРѕСЃС‚СЊ: ";
 		cin >> costVehicle;
 
-		cout << "Тип транспортного средства: ";
+		cout << "РўРёРї С‚СЂР°РЅСЃРїРѕСЂС‚РЅРѕРіРѕ СЃСЂРµРґСЃС‚РІР°: ";
 		cin >> typeVehicle;
 
-		cout << "Обладатель: ";
+		cout << "РћР±Р»Р°РґР°С‚РµР»СЊ: ";
 		cin >> owner;
 
-		cout << "Цена топлива: ";
+		cout << "Р¦РµРЅР° С‚РѕРїР»РёРІР°: ";
 		cin >> costFuel;
 
-		cout << "Расход на КМ: ";
+		cout << "Р Р°СЃС…РѕРґ РЅР° РљРњ: ";
 		cin >> fuelPerKM;
 		cout << endl;
 
