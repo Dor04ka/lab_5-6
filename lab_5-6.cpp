@@ -55,7 +55,7 @@ public:
 
 
 	// геттер для стоимости ТП (1 функция)
-	double GetCostVehicle() const {
+	double GetCostVehicle() {
 		return costVehicle;
 	}
 
